@@ -53,11 +53,11 @@ public class TrueTiles : MonoBehaviour
 
             //Box Colliders
             BoxCollider bc1 = plane1.AddComponent(typeof(BoxCollider)) as BoxCollider;
-            bc1.size = new Vector3(12f, 5f, 12f);
+            //bc1.size = new Vector3(12f, 5f, 12f);
             bc1.isTrigger = true;
 
             BoxCollider bc2 = plane2.AddComponent(typeof(BoxCollider)) as BoxCollider;
-            bc2.size = new Vector3(12f, 5f, 12f);
+            //bc2.size = new Vector3(12f, 5f, 12f);
             bc2.isTrigger = true;
 
             if (System.Convert.ToBoolean(respawn.GetComponent<RandomizeMap>().chance))
@@ -70,7 +70,9 @@ public class TrueTiles : MonoBehaviour
                 {
                     plane2.AddComponent<TrueTiles>();
                 }
+                bc2.size = new Vector3(10f, 5f, 10f);
                 plane1.AddComponent<FalseTiles>();
+                bc1.size = new Vector3(12f, 5f, 12f);
                 respawn.GetComponent<RandomizeMap>().currTile = plane2.transform.position;
                 Debug.Log("Right");
             } 
@@ -84,7 +86,9 @@ public class TrueTiles : MonoBehaviour
                 {
                     plane1.AddComponent<TrueTiles>();
                 }
+                bc1.size = new Vector3(10f, 5f, 10f);
                 plane2.AddComponent<FalseTiles>();
+                bc2.size = new Vector3(12f, 5f, 12f);
                 respawn.GetComponent<RandomizeMap>().currTile = plane1.transform.position;
                 Debug.Log("Left");
             }

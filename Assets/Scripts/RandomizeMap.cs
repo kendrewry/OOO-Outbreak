@@ -7,6 +7,7 @@ public class RandomizeMap : MonoBehaviour
 
     public int diff;
     public float range;
+    public int numCount;
     public int numIter;
     public int chance;
     public Vector3 currTile;
@@ -14,6 +15,7 @@ public class RandomizeMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numCount = 1;
 
         diff = 2;
 
@@ -49,11 +51,11 @@ public class RandomizeMap : MonoBehaviour
 
         //Box Colliders
         BoxCollider bc1 = plane1.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        bc1.size = new Vector3(12f, 5f, 12f);
+        // bc1.size = new Vector3(12f, 5f, 12f);
         bc1.isTrigger = true;
 
         BoxCollider bc2 = plane2.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        bc2.size = new Vector3(12f, 5f, 12f);
+        // bc2.size = new Vector3(12f, 5f, 12f);
         bc2.isTrigger = true;
 
         chance = Random.Range(0, 2);
@@ -62,14 +64,18 @@ public class RandomizeMap : MonoBehaviour
         if (System.Convert.ToBoolean(chance))
         {
             plane1.AddComponent<FalseTiles>();
+            bc1.size = new Vector3(12f, 5f, 12f);
             plane2.AddComponent<TrueTiles>();
+            bc2.size = new Vector3(10f, 5f, 10f);
             currTile = new Vector3(2.5f, 0f, 10f);
             Debug.Log("Right");
         } 
         else 
         {
             plane1.AddComponent<TrueTiles>();
+            bc1.size = new Vector3(10f, 5f, 10f);
             plane2.AddComponent<FalseTiles>();
+            bc2.size = new Vector3(12f, 5f, 12f);
             currTile = new Vector3(-2.5f, 0f, 10f);
             Debug.Log("Left");
         }
