@@ -10,7 +10,6 @@ public class RandomizeMap : MonoBehaviour
     public int numIter;
     public int chance;
     public Vector3 currTile;
-    public GameObject fps;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +19,12 @@ public class RandomizeMap : MonoBehaviour
 
         if (diff == 0)
         {
-            numIter = 5;
+            numIter = 15;
             range = 0.4f;
         }
         else if (diff == 1)
         {
-            numIter = 10;
+            numIter = 15;
             range = 0.8f;
         }
         else
@@ -54,7 +53,7 @@ public class RandomizeMap : MonoBehaviour
         bc1.isTrigger = true;
 
         BoxCollider bc2 = plane2.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        bc2.size = new Vector3(15f, 5f, 15f);
+        bc2.size = new Vector3(12f, 5f, 12f);
         bc2.isTrigger = true;
 
         chance = Random.Range(0, 2);
@@ -79,12 +78,9 @@ public class RandomizeMap : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (fps.transform.position.y <= -30f)
-        {
-            fps.transform.position = new Vector3(0f, 5f, 0f);
-        }
-    }
+    // // Update is called once per frame
+    // void Update()
+    // {
+
+    // }
 }
