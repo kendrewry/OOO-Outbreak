@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: An escape room game that teaches the order of operations
+  m_text: Learn the order of operations!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8eb530e1167c3241ae5bc0b8e3d37f0, type: 2}
   m_sharedMaterial: {fileID: -3138535115254196714, guid: c8eb530e1167c3241ae5bc0b8e3d37f0, type: 2}
