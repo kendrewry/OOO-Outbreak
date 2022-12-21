@@ -113,7 +113,7 @@ public class RandomizeMap : MonoBehaviour
             Debug.Log("Right");
             int qAns = Random.Range(-2, 3);
             int q = Random.Range(0, curr.Length);
-            question.text = curr[q] + "Jump Right if Answer is" + currAns[q] + "and Left if Answer is " + currAns[q] + (float)qAns;
+            question.text = curr[q] + "\n Jump Right if Answer is " + currAns[q] + " and Left if Answer is " + currAns[q] + (float)qAns;
         } 
         else 
         {
