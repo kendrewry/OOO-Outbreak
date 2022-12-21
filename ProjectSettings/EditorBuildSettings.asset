@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu/Main Menu.unity
+    guid: cd4cb14f2f9978a48aec1cb3da7a4b4b
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: f53017307a6694df2837fbbc7fd8aa09
+  - enabled: 1
+    path: Assets/Scenes/Level Room.unity
+    guid: 4aac4e69e0eb047a88f2a160e235e1b9
+  - enabled: 1
+    path: Assets/Scenes/Parkour.unity
+    guid: 299da1aecb34547ad86c348db3f82c1f
   m_configObjects: {}
