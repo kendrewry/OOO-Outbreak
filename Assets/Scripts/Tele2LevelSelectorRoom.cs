@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
-
-
-public class LevelSelector : MonoBehaviour
+public class Tele2LevelSelectorRoom : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -22,6 +19,8 @@ public class LevelSelector : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        SceneManager.LoadScene(1);
+        Debug.Log("Bruh");
+        SceneManager.LoadScene(sceneBuildIndex: 2);
     }
+
 }
