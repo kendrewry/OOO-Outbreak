@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -19,5 +20,6 @@ public class FinishLine : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Completed Race");
+        SceneManager.LoadScene(0);
     }
 }

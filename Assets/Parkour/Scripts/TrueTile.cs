@@ -33,8 +33,8 @@ public class TrueTiles : MonoBehaviour
             respawn = GameObject.FindGameObjectWithTag("Respawn");
             string[] curr = respawn.GetComponent<RandomizeMap>().curr;
             float[] currAns = respawn.GetComponent<RandomizeMap>().currAns;
-            Text t = respawn.GetComponent<RandomizeMap>().powerup;
-            Text question = respawn.GetComponent<RandomizeMap>().powerup;
+            // Text t = respawn.GetComponent<RandomizeMap>().powerup;
+            Text question = respawn.GetComponent<RandomizeMap>().question;
 
             // FirstPersonController fps = GameObject.FindGameObjectWithTag("Player");
             // fps.GetComponent<FirstPersonController>().m_WalkSpeed = 5f;

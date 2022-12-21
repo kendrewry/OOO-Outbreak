@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class RandomizeMap : MonoBehaviour
 {
     public Text question;
-    public Text powerup;
     public int diff;
     public float range;
     public int numCount;
@@ -45,7 +44,6 @@ public class RandomizeMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        powerup.text = "";
         if (difficulty == 0) {
             curr = beg;
             currAns = begAns;
