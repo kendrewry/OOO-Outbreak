@@ -11,7 +11,7 @@ public class FloorTile : MonoBehaviour
     void Start()
     {
         BoxCollider bc = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        bc.size = new Vector3(12f, 5f, 12f);
+        bc.size = new Vector3(12f, 3f, 12f);
         bc.isTrigger = true;
     }
 
