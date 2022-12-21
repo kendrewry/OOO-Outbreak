@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.UI;
 
 
 public class TrueTiles : MonoBehaviour
@@ -28,12 +29,35 @@ public class TrueTiles : MonoBehaviour
     {
         if (status)
         {
+
+            respawn = GameObject.FindGameObjectWithTag("Respawn");
+            string[] curr = respawn.GetComponent<RandomizeMap>().curr;
+            float[] currAns = respawn.GetComponent<RandomizeMap>().currAns;
+            Text t = respawn.GetComponent<RandomizeMap>().powerup;
+
+            FirstPersonController fps = GameObject.FindGameObjectWithTag("Player");
+            fps.GetComponent<FirstPersonController>().m_WalkSpeed = 5f;
+            fps.GetComponent<FirstPersonController>().m_JumpSpeed = 10f;
+            fps.GetComponent<FirstPersonController>().m_GravityMultiplier = 2f;
+            int power = Random.Range(0, 3);
+            if (power == 0) {
+                fps.GetComponent<FirstPersonController>().m_WalkSpeed *= 2;
+                t.text = "PowerUp: Speed";
+            }
+            else if (power == 1) {
+                fps.GetComponent<FirstPersonController>().m_JumpSpeed *= 2;
+                t.text = "PowerUp: JumpSpeed";
+            }
+            else if (power == 2) {
+                fps.GetComponent<FirstPersonController>().m_GravityMultiplier /= 2;
+                t.text = "PowerUp: Gravity";
+            }
+            
             //Update Material of Correct Tile
             Material green = Resources.Load("GreenTile", typeof(Material)) as Material;
             gameObject.GetComponent<Renderer>().material = green;
 
             //Initializations
-            respawn = GameObject.FindGameObjectWithTag("Respawn");
             player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<FirstPersonController>().m_WalkSpeed += 0.2f;
             player.GetComponent<FirstPersonController>().m_JumpSpeed += 0.1f;
@@ -82,6 +106,9 @@ public class TrueTiles : MonoBehaviour
                 bc1.size = new Vector3(12f, 5f, 12f);
                 respawn.GetComponent<RandomizeMap>().currTile = plane2.transform.position;
                 Debug.Log("Right");
+                int qAns = Random.Range(0, 100);
+                int q = Random.Range(0, curr.Length);
+                question.text = curr[q] + "Jump Right if Answer is" + currAns[q] + "and Left if Answer is " + qAns;
             } 
             else 
             {
@@ -98,6 +125,9 @@ public class TrueTiles : MonoBehaviour
                 bc2.size = new Vector3(12f, 5f, 12f);
                 respawn.GetComponent<RandomizeMap>().currTile = plane1.transform.position;
                 Debug.Log("Left");
+                int qAns = Random.Range(0, 100);
+                int q = Random.Range(0, curr.Length);
+                question.text = curr[q] + "Jump Right if Answer is" + qAns + "and Left if Answer is " + currAns[q];
             }
 
             respawn.GetComponent<RandomizeMap>().numIter = respawn.GetComponent<RandomizeMap>().numIter - 1;
