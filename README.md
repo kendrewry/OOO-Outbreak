@@ -19,8 +19,12 @@ Kenny's implemention of Code:
 - Entire mainmenu.cs file
 
 Diganta's implemention of Code:
-    -All lines in dodgeball.cs
-
+    - All lines in dodgeball.cs
+    - Entire FalseTile.cs
+    - Entire FloorTile.cs
+    - Entire RandomizeMap.cs
+    - Entire TrueTile.cs
+    - Entire WinningTile.cs
 
 External tutorials/scripts/assets
 - All models except the regular planes found in Tutorial and DifficultySelectorRoom are found in these two asset packs from the Unity asset store:
