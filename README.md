@@ -20,12 +20,13 @@ Kenny's implemention of Code:
 - Lines (109-132) in RandomizeMap.cs
 
 Diganta's implemention of Code:
-    - All lines in dodgeball.cs
-    - Entire FalseTile.cs
-    - Entire FloorTile.cs
-    - All lines except (109-132) RandomizeMap.cs
-    - Entire TrueTile.cs
-    - Entire WinningTile.cs
+    - All Source Code lines in Dodgeball.cs
+    - All Source Code lines in FalseTile.cs
+    - All Source Code lines in FloorTile.cs
+    - All Source Code lines except (109-132) in RandomizeMap.cs
+    - All Source Code lines in TrueTile.cs
+    - All Source Code lines in WinningTile.cs
+    -Lines 60 to 105 of Turrets.cs
 
 External tutorials/scripts/assets
 - All models except the regular planes found in Tutorial and DifficultySelectorRoom are found in these two asset packs from the Unity asset store:
