@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 
 public class TrueTiles : MonoBehaviour
 {
 
+    public GameObject player;
     public GameObject respawn;
     private bool status;
 
@@ -32,12 +34,17 @@ public class TrueTiles : MonoBehaviour
 
             //Initializations
             respawn = GameObject.FindGameObjectWithTag("Respawn");
-            //Debug.Log(System.Convert.ToBoolean(respawn.GetComponent<RandomizeMap>().chance));
+            player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<FirstPersonController>().m_WalkSpeed += 0.2f;
+            player.GetComponent<FirstPersonController>().m_JumpSpeed += 0.1f;
+            // Debug.Log(System.Convert.ToBoolean(respawn.GetComponent<RandomizeMap>().chance));
             // Debug.Log("stepped on Real");
             Vector3 parent = respawn.GetComponent<RandomizeMap>().currTile;
             Material red = Resources.Load("RedTile", typeof(Material)) as Material;
-            float range1 = Random.Range(-(respawn.GetComponent<RandomizeMap>().range), respawn.GetComponent<RandomizeMap>().range);
-            float range2 = Random.Range(-(respawn.GetComponent<RandomizeMap>().range), respawn.GetComponent<RandomizeMap>().range);
+            // float range1 = Random.Range(-(respawn.GetComponent<RandomizeMap>().range), respawn.GetComponent<RandomizeMap>().range);
+            // float range2 = Random.Range(-(respawn.GetComponent<RandomizeMap>().range), respawn.GetComponent<RandomizeMap>().range);
+            float range1 = 0.0f;
+            float range2 = 0.0f;
 
             //Plane 1 Creation, Position, Rotation
             GameObject plane1 = GameObject.CreatePrimitive(PrimitiveType.Plane);
