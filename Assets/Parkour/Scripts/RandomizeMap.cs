@@ -127,7 +127,7 @@ public class RandomizeMap : MonoBehaviour
             Debug.Log("Left");
             int qAns = Random.Range(0, 100);
             int q = Random.Range(0, curr.Length);
-            question.text = curr[q] + "\nJump Right if Answer is " + currAns[q] + qAns.ToString() + " and Left if Answer is " + currAns[q];
+            question.text = curr[q] + "\n Jump Right if Answer is " + currAns[q] + qAns.ToString() + " and Left if Answer is " + currAns[q];
         }
 
         chance = Random.Range(0, 2);

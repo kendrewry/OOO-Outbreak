@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinningTilw : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class WinningTilw : MonoBehaviour
         Material purple = Resources.Load("WinTile", typeof(Material)) as Material;
         gameObject.GetComponent<Renderer>().material = purple;
         Debug.Log("WON");
+        SceneManager.LoadScene(4);
         
     }
 }
