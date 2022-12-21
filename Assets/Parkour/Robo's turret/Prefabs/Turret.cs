@@ -19,7 +19,7 @@ public class Turret : MonoBehaviour
         projectile_template = (GameObject)Resources.Load("Dodgeball/Prefab/Dodgeball", typeof(GameObject));  // projectile prefab
         if (projectile_template == null)
             Debug.LogError("Error: could not find the dodgeball in the project!");
-        shooting_delay = 1.0f;  
+        shooting_delay = 3.0f;  
         projectile_velocity = 5.0f;
         direction_from_turret_to_player = new Vector3(0.0f, 0.0f, 0.0f);
         projectile_starting_pos = new Vector3(0.0f, 0.0f, 0.0f);
