@@ -3,7 +3,7 @@ Order Of Operations: Outbreak
 
 
 
-Piyush's Lines of code:
+Piyush's implemention of code:
 - All Source Code lines in Tele2LevelSelectorRoom.cs
 - All Source Code Lines in LevelSelector.cs
 - All Source Code Lines in videoPlayerBtns.cs
@@ -13,13 +13,14 @@ Piyush's Lines of code:
 - Lines () in obstacle.cs
 
 
-Kenny's Lines of Code:
+Kenny's implemention of Code:
 - Lines () in dodgeball.cs
 - Lines () in prismObstacles.cs
 - Lines () in Finishline.cs
 - Lines () in obstacle.cs
+- Entire mainmenu.cs file
 
-Diganta's Lines of Code:
+Diganta's implemention of Code:
 - Lines () in dodgeball.cs
 - Lines () in prismObstacles.cs
 - Lines () in Finishline.cs
