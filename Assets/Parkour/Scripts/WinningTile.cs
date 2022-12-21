@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WinningTilw : MonoBehaviour
 {
+    public GameObject respawn;
     // // Start is called before the first frame update
     // void Start()
     // {
@@ -21,5 +22,6 @@ public class WinningTilw : MonoBehaviour
         Material purple = Resources.Load("WinTile", typeof(Material)) as Material;
         gameObject.GetComponent<Renderer>().material = purple;
         Debug.Log("WON");
+        
     }
 }

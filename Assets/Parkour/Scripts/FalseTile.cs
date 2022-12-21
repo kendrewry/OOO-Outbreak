@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FalseTiles : MonoBehaviour
 {
+    public GameObject respawn;
     // Start is called before the first frame update
     // void Start()
     // {
@@ -19,6 +20,8 @@ public class FalseTiles : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Debug.Log("stepped on Fake");
+        respawn = GameObject.FindGameObjectWithTag("Respawn");
+        respawn.GetComponent<RandomizeMap>().question.text = "";
         Destroy(this.gameObject);
     }
 }
