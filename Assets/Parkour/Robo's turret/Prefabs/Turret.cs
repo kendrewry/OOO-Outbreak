@@ -44,10 +44,8 @@ public class Turret : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast( turret_centroid, direction_from_turret_to_player, out hit, Mathf.Infinity))
         {
-            Debug.Log("hi");
             if (hit.collider.gameObject == character)
             {
-                Debug.Log("hello");
             //     ////////////////////////////////////////////////
             //     // WRITE CODE HERE:
             //     // implement deflection shooting
