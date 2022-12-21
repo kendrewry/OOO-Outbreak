@@ -4,43 +4,29 @@ using UnityEngine;
 
 public class obstacle : MonoBehaviour
 {
-    bool reset = false;
+    public float speed;
+    public int randInt;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(move());
+        randInt = Random.Range(0,2);
+        speed = Random.Range(0.5f, 2.0f);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    private int getRand()
-    {
-        return Random.Range(1,2);
-    }
-
-    private IEnumerator move()
-    {
-        WaitForSeconds waitTime = new WaitForSeconds(Random.Range(0.5f,3.0f));
-        while (true)
+    { 
+        if(randInt == 0)
         {
-            Vector3 init = transform.position;
-            if(reset)
-            {
-                init.y = init.y - 3;
-                transform.position = init;
-                reset = false;
-            }
-            else
-            {
-                init.y = init.y + 3;
-                transform.position = init;
-                reset = true;
-            }
-            yield return waitTime;
+            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * speed, 4.0f) - 4, transform.position.z);
+        } 
+        else if(randInt == 1)
+        {
+            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * speed, 5.0f) - 4, transform.position.z);
+        }
+        else if(randInt == 2)
+        {
+            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * speed, 6.0f) - 4, transform.position.z);
         }
     }
 }
