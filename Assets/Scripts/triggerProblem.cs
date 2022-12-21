@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class triggerProblem : MonoBehaviour
 {
     public Text question;
+    public Text feedback;
     public GameObject answer;
     public GameObject canvas;
     public string[] beg = {"1  +  8  -  2  -  2", "1  +  9  +  1  +  9", "4  -  1  +  10  +  2", "6  +  3  -  6  -  2", "7  +  8  +  4  -  10", "1  +  6  -  5  +  4", "8  -  5  +  1  +  1", "3  +  4  +  8  +  8", "	5  +  1  +  4  -  3", "9  -  5  +  5  +  3", "6  +  3  +  3  +  5", "9  +  9  +  3  +  6"};
@@ -27,6 +28,12 @@ public class triggerProblem : MonoBehaviour
     public string[] hard = {"-1 + 1 * 5", "-9 / (10 - 8)", "-10 / (10 - 6)", "(-1 - 4) / 10", "(1 * 6) / 10", "(-6 * 1) / 10", "-2 - 8 - 2", "(-2 - 7) / -4", "(-4 / 2) - 4", "-8 - 8 * 3"};
     public float[] hardAns = {4, -4.5f, -2.5f, -0.5f, 0.6f, -0.6f, -12, 2.25f, -6, -32};
 
+    private GameObject go;
+    private Button myBtn;
+    private GameObject go1;
+    private Button myBtn2;
+    private GameObject go2;
+    private Button myBtn3;
 
     // Start is called before the first frame update
     void Start()
@@ -69,37 +76,63 @@ public class triggerProblem : MonoBehaviour
         //Question UI
         question.enabled = true;
         string[] ret = pickQuestion(difficulty);
-        question.text = ret[0];
+        question.text = "Solve: " + ret[0];
         Vector3 temp = question.transform.position;
-        temp.y += 150;
-        question.transform.position = temp;
 
         //Answer UI
         //Answer1
-        GameObject go = (GameObject)Instantiate(answer);
-        Button myBtn = go.GetComponent<Button>();
+        go = (GameObject)Instantiate(answer);
+        myBtn = go.GetComponent<Button>();
         go.transform.SetParent(canvas.transform);
         myBtn.GetComponentInChildren<Text>().text = ret[1];
         Vector3 temp2 = temp;
         temp2.x -= 200;
         temp2.y -= 100;
         myBtn.transform.position = temp2;
+        myBtn.onClick.AddListener(correct);
+
         //Answer2
-        GameObject go1 = (GameObject)Instantiate(answer);
-        Button myBtn2 = go1.GetComponent<Button>();
+        go1 = (GameObject)Instantiate(answer);
+        myBtn2 = go1.GetComponent<Button>();
         go1.transform.SetParent(canvas.transform);
         myBtn2.GetComponentInChildren<Text>().text = ret[1] + 2;
         Vector3 temp3 = temp;
         temp3.y -= 100;
         myBtn2.transform.position = temp3;
+        myBtn2.onClick.AddListener(incorrect);
+
         //answer3
-        GameObject go2 = (GameObject)Instantiate(answer);
-        Button myBtn3 = go2.GetComponent<Button>();
+        go2 = (GameObject)Instantiate(answer);
+        myBtn3 = go2.GetComponent<Button>();
         go2.transform.SetParent(canvas.transform);
         myBtn3.GetComponentInChildren<Text>().text = (int.Parse(ret[1]) - 2).ToString();
         Vector3 temp4 = temp;
         temp4.y -= 100;
         temp4.x += 200;
         myBtn3.transform.position = temp4;
+        myBtn3.onClick.AddListener(incorrect);
+
+        void correct()
+        {
+            Destroy(go);
+            Destroy(myBtn);
+            Destroy(go1);
+            Destroy(myBtn2);
+            Destroy(go2);
+            Destroy(myBtn3);
+            question.text = "";
+            feedback.text = "Correct!";
+        }
+        void incorrect()
+        {
+            Destroy(go);
+            Destroy(myBtn);
+            Destroy(go1);
+            Destroy(myBtn2);
+            Destroy(go2);
+            Destroy(myBtn3);
+            question.text = "";
+            feedback.text = "Incorrect!";
+        }
     }
 }
