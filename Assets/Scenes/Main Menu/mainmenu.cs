@@ -34,7 +34,7 @@ public class mainmenu : MonoBehaviour
 
     public void Intermediate() {
         Debug.Log("Succesfully set difficulty to Intermediate");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void Extreme() {
