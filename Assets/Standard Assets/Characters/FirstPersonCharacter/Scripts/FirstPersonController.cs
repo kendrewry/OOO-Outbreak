@@ -10,8 +10,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        [SerializeField] private bool m_IsWalking;
+        [SerializeField] public bool m_IsWalking;
         [SerializeField] public float m_WalkSpeed;
+        [SerializeField] public Vector3 m_MovementDirection;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] public float m_JumpSpeed;
@@ -45,6 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+            m_MovementDirection = new Vector3(0.0f, 0.0f, 0.0f);
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -61,6 +63,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+
+            float xdirection = Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
+            float zdirection = Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
+            m_MovementDirection = new Vector3(xdirection, 0.0f, zdirection);
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
