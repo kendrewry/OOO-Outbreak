@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class RandomizeMap : MonoBehaviour
 {
-
+    public Text question;
+    public Text powerup;
     public int diff;
     public float range;
     public int numCount;
@@ -13,8 +14,6 @@ public class RandomizeMap : MonoBehaviour
     public int chance;
     public Vector3 currTile;
     public int difficulty = 1;
-    public Text question;
-    public Text powerup;
 
 
     public string[] curr;
@@ -128,7 +127,7 @@ public class RandomizeMap : MonoBehaviour
             Debug.Log("Left");
             int qAns = Random.Range(0, 100);
             int q = Random.Range(0, curr.Length);
-            question.text = curr[q] + "Jump Right if Answer is" + currAns[q] + (float)qAns; + "and Left if Answer is " + currAns[q];
+            //question.text = curr[q] + "Jump Right if Answer is" + currAns[q] + (float)qAns; + "and Left if Answer is " + currAns[q];
         }
 
         chance = Random.Range(0, 2);

@@ -34,24 +34,25 @@ public class TrueTiles : MonoBehaviour
             string[] curr = respawn.GetComponent<RandomizeMap>().curr;
             float[] currAns = respawn.GetComponent<RandomizeMap>().currAns;
             Text t = respawn.GetComponent<RandomizeMap>().powerup;
+            Text question = respawn.GetComponent<RandomizeMap>().powerup;
 
-            FirstPersonController fps = GameObject.FindGameObjectWithTag("Player");
-            fps.GetComponent<FirstPersonController>().m_WalkSpeed = 5f;
-            fps.GetComponent<FirstPersonController>().m_JumpSpeed = 10f;
-            fps.GetComponent<FirstPersonController>().m_GravityMultiplier = 2f;
-            int power = Random.Range(0, 3);
-            if (power == 0) {
-                fps.GetComponent<FirstPersonController>().m_WalkSpeed *= 2;
-                t.text = "PowerUp: Speed";
-            }
-            else if (power == 1) {
-                fps.GetComponent<FirstPersonController>().m_JumpSpeed *= 2;
-                t.text = "PowerUp: JumpSpeed";
-            }
-            else if (power == 2) {
-                fps.GetComponent<FirstPersonController>().m_GravityMultiplier /= 2;
-                t.text = "PowerUp: Gravity";
-            }
+            // FirstPersonController fps = GameObject.FindGameObjectWithTag("Player");
+            // fps.GetComponent<FirstPersonController>().m_WalkSpeed = 5f;
+            // fps.GetComponent<FirstPersonController>().m_JumpSpeed = 10f;
+            // fps.GetComponent<FirstPersonController>().m_GravityMultiplier = 2f;
+            // int power = Random.Range(0, 3);
+            // if (power == 0) {
+            //     fps.GetComponent<FirstPersonController>().m_WalkSpeed *= 2;
+            //     t.text = "PowerUp: Speed";
+            // }
+            // else if (power == 1) {
+            //     fps.GetComponent<FirstPersonController>().m_JumpSpeed *= 2;
+            //     t.text = "PowerUp: JumpSpeed";
+            // }
+            // else if (power == 2) {
+            //     fps.GetComponent<FirstPersonController>().m_GravityMultiplier /= 2;
+            //     t.text = "PowerUp: Gravity";
+            // }
             
             //Update Material of Correct Tile
             Material green = Resources.Load("GreenTile", typeof(Material)) as Material;
