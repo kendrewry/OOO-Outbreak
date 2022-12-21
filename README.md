@@ -7,24 +7,19 @@ Piyush's implemention of code:
 - All Source Code lines in Tele2LevelSelectorRoom.cs
 - All Source Code Lines in LevelSelector.cs
 - All Source Code Lines in videoPlayerBtns.cs
-- Lines () in dodgeball.cs
-- Lines () in prismObstacles.cs
-- Lines () in Finishline.cs
-- Lines () in obstacle.cs
+- Lines (52-70) in triggerProblems.cs
+- All scripts associated with the DifficultySelectorRoom
 
 
 Kenny's implemention of Code:
-- Lines () in dodgeball.cs
-- Lines () in prismObstacles.cs
-- Lines () in Finishline.cs
-- Lines () in obstacle.cs
+- Lines (All lines except 52-70) in triggerProblems.cs
+- Entire prismObstacles.cs file
+- Entire Finishline.cs file
+- Entire obstacle.cs file
 - Entire mainmenu.cs file
 
 Diganta's implemention of Code:
-- Lines () in dodgeball.cs
-- Lines () in prismObstacles.cs
-- Lines () in Finishline.cs
-- Lines () in obstacle.cs
+    -All lines in dodgeball.cs
 
 
 External tutorials/scripts/assets
